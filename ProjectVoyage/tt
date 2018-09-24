@@ -1,0 +1,8 @@
+{"tyontekijat":
+[
+  {"firstName":"Mauno", "lastName":"Ahonen","telephone":["1214","1512"]},
+  {"firstName":"Matti", "lastName":"Näsä", "telephone":[null,"1512"]},
+  {"firstName":"Raimo", "lastName":"Vormisto", "telephone":["1214","1512"]},
+  {"firstName":"Timo", "lastName":"Silakka", "telephone":["1214",null]}
+]
+}

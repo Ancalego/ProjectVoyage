@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON TESTI</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<table id="duunarit"></table>
+<script>
+    var xmlhttp = new XMLHttpRequest();
+    var url = "http://api.digitransit.fi/routing/v1/routers/hsl/bike_rental";
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            var myArr = JSON.parse(xmlhttp.responseText);
+            myFunction(myArr.stations);
+        }
+    }
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();
+
+    function myFunction(arr) {
+        var out = "";
+        var i;
+        for(i = 0; i < arr.length; i++) {
+            out += "<tr><td>" + arr[i].name + "</td><td>" +
+                arr[i].bikesAvailable + "</td><tr>";
+        }
+        document.getElementById("duunarit").innerHTML = out;
+    }
+</script>
+</body>
+</html>
