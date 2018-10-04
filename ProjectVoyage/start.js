@@ -4,11 +4,17 @@ var app = express();
 
 
 app.get("/", function (req, res) {
-	res.send("Hello World");
+    res.sendFile( __dirname + "\\" + "login.html");
 });
 
 app.get("/ok", function (req, res) {
-	res.sendFile( __dirname + "\\" + "tt");
+    response = {
+        username:req.query.username,
+        password:req.query.password
+    }
+    console.log(response);
+    res.sendFile( __dirname + "\\" + "main.html");
+    //res.end(JSON.stringify(response));
 });
 
 app.get("/index.htm", function (req, res) {
