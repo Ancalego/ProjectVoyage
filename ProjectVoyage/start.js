@@ -3,7 +3,7 @@ var express = require("express");
 var app = express();
 var mysql = require('mysql');
 
-var temp;
+let temp = "";
 
 
 app.get("/", function (req, res) {
@@ -93,7 +93,7 @@ app.get("/note", function (req, res) {
     con.connect(function(err){
         if (err) throw err;
         console.log("Connected!");
-        var sql = 'INSERT INTO notes(description,location,times,dates,user_id) VALUES("'+req.query.description+'","'+req.query.location+'","'+req.query.time+'","'+req.query.date+'","1");';
+        var sql = 'INSERT INTO notes(description,location,times,dates,user_id) VALUES("'+req.query.description+'","'+req.query.location+'","'+req.query.time+'","'+req.query.date+'","'+temp+'");';
 
         console.log(sql);
         con.query(sql, function (err, result){

@@ -109,14 +109,14 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="81" />
-          <entry key="JavaScript" value="383" />
+          <entry key="JavaScript" value="400" />
           <entry key="SQL" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="81" />
-          <entry key="js" value="384" />
+          <entry key="js" value="401" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -141,8 +141,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/start.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="95" column="183" selection-start-line="95" selection-start-column="183" selection-end-line="95" selection-end-column="183" />
+            <state relative-caret-position="228">
+              <caret line="95" column="191" selection-start-line="95" selection-start-column="191" selection-end-line="95" selection-end-column="191" />
             </state>
           </provider>
         </entry>
@@ -180,8 +180,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="155" column="29" selection-start-line="155" selection-start-column="29" selection-end-line="155" selection-end-column="29" />
+            <state relative-caret-position="2686">
+              <caret line="158" column="29" selection-start-line="158" selection-start-column="29" selection-end-line="158" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -349,23 +349,23 @@
       <workItem from="1538938716524" duration="72000" />
       <workItem from="1538988321300" duration="85000" />
       <workItem from="1538991207217" duration="1529000" />
-      <workItem from="1538995462812" duration="5313000" />
+      <workItem from="1538995462812" duration="6450000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29644000" />
+    <option name="totallyTimeSpent" value="30781000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.09878542" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17489879" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3950178" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.4911032" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -437,13 +437,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="155" column="29" selection-start-line="155" selection-start-column="29" selection-end-line="155" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/mysql/lib/protocol/Protocol.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -451,10 +444,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2686">
+          <caret line="158" column="29" selection-start-line="158" selection-start-column="29" selection-end-line="158" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/start.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="95" column="183" selection-start-line="95" selection-start-column="183" selection-end-line="95" selection-end-column="183" />
+        <state relative-caret-position="228">
+          <caret line="95" column="191" selection-start-line="95" selection-start-column="191" selection-end-line="95" selection-end-column="191" />
         </state>
       </provider>
     </entry>
