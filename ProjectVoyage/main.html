@@ -172,6 +172,8 @@
     </form>
 </div>
 <script>
+
+
     var modal = document.getElementById('id01');
     window.onclick = function(event) {
         if (event.target == modal) {
@@ -179,6 +181,11 @@
             document.querySelector('#id01 #ok .container input[type="text"]').value = '';
         }
     };
+//haetaan käyttäjän notet
+    fetch("http://localhost:8081/getnotes").then(function(response) {
+        return response.json();
+
+    })
 
 </script>
 
