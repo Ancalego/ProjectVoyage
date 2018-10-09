@@ -104,6 +104,37 @@ app.get("/note", function (req, res) {
         });
 
     });
+    // käyttäjän notejen getti
+    app.get("/getnote", function (req, res) {
+        var con = mysql.createConnection({
+            host: "localhost",
+            user: "root",
+            password: "c121112m",
+            database: "voyage"
+        });
+        con.connect(function(err){
+            if (err) throw err;
+            console.log("Connected!");
+            var sql = 'SELECT * FROM notes WHERE user_id = "' +temp+ '";';
+
+            console.log(sql);
+            con.query(sql, function (err, result){
+                if (err) throw err;
+
+                else{
+                    res.sendFile( __dirname + "\\" + "main.html");
+                }
+            });
+
+        });
+
+        response = {
+            username:req.query.username,
+            password:req.query.password
+        }
+        console.log(response);
+        //res.end(JSON.stringify(response));
+    });
 
     response = {
         username:req.query.username,
