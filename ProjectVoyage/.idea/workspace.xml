@@ -93,13 +93,13 @@
     <session id="-305828854">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="10" />
+          <entry key="project.closed" value="11" />
           <entry key="project.open.time.0" value="4" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.open.time.8" value="2" />
+          <entry key="project.open.time.8" value="3" />
           <entry key="project.open.time.9" value="3" />
-          <entry key="project.opened" value="11" />
+          <entry key="project.opened" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -108,15 +108,15 @@
       <usages-collector id="statistics.php.composer.command.options" />
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="99" />
-          <entry key="JavaScript" value="410" />
+          <entry key="HTML" value="100" />
+          <entry key="JavaScript" value="411" />
           <entry key="SQL" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="99" />
-          <entry key="js" value="411" />
+          <entry key="html" value="100" />
+          <entry key="js" value="412" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -138,20 +138,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/start.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="143" lean-forward="true" selection-start-line="143" selection-end-line="143" />
+            <state relative-caret-position="313">
+              <caret line="126" column="72" selection-start-line="126" selection-start-column="72" selection-end-line="126" selection-end-column="72" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="82">
-              <caret line="191" column="21" lean-forward="true" selection-start-line="191" selection-start-column="21" selection-end-line="191" selection-end-column="21" />
+            <state relative-caret-position="72">
+              <caret line="186" column="46" selection-start-line="186" selection-start-column="46" selection-end-line="186" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -180,8 +180,8 @@
         <option value="$PROJECT_DIR$/json_harj1.html" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/login.html" />
-        <option value="$PROJECT_DIR$/main.html" />
         <option value="$PROJECT_DIR$/start.js" />
+        <option value="$PROJECT_DIR$/main.html" />
       </list>
     </option>
   </component>
@@ -303,22 +303,22 @@
       <workItem from="1538991207217" duration="1529000" />
       <workItem from="1538995462812" duration="6692000" />
       <workItem from="1539173386373" duration="726000" />
+      <workItem from="1539176471745" duration="130000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31749000" />
+    <option name="totallyTimeSpent" value="31879000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17813765" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.07935223" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.12633452" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.12633452" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -377,9 +377,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2210">
           <caret line="130" column="76" selection-start-line="130" selection-start-column="51" selection-end-line="130" selection-end-column="76" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -397,17 +394,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.html">
+    <entry file="file://$PROJECT_DIR$/start.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="191" column="21" lean-forward="true" selection-start-line="191" selection-start-column="21" selection-end-line="191" selection-end-column="21" />
+        <state relative-caret-position="313">
+          <caret line="126" column="72" selection-start-line="126" selection-start-column="72" selection-end-line="126" selection-end-column="72" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/start.js">
+    <entry file="file://$PROJECT_DIR$/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="143" lean-forward="true" selection-start-line="143" selection-end-line="143" />
+        <state relative-caret-position="72">
+          <caret line="186" column="46" selection-start-line="186" selection-start-column="46" selection-end-line="186" selection-end-column="46" />
         </state>
       </provider>
     </entry>

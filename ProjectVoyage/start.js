@@ -114,7 +114,7 @@ app.get("/note", function (req, res) {
 });
 
 
-    app.get("/getnotes", function (req, res) {
+    app.get("/getnotes2", function (req, res) {
         var con = mysql.createConnection({
             host: "localhost",
             user: "root",
@@ -124,7 +124,7 @@ app.get("/note", function (req, res) {
         con.connect(function (err) {
             if (err) throw err;
             console.log("Connected!");
-            var sql = 'SELECT * FROM notes;';
+            var sql = 'SELECT * FROM notes WHERE user_id = "'+temp+'";';
 
             console.log(sql);
             con.query(sql, function (err, result) {
