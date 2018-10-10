@@ -126,7 +126,7 @@
         <div style = "margin:30px">
 
 
-                <table style = "width:100%">
+                <table style = "width:100%" id = "poyta">
                     <tr>
                     <th>Date</th>
                     <th>Time</th>
@@ -180,6 +180,26 @@
         }
     };
 
+</script>
+
+<script>
+    var xmlhttp = new XMLHttpRequest();
+    var url = "http://localhost:8081/getnotes";
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            var myArr = JSON.parse(xmlhttp.responseText);
+            var foo = 0;
+            var htmly = '<tr>' + '<th>Date</th>' + '<th>Time</th>' + '<th>Location</th>' + '<th>Description</th>' + '</tr>'
+            while (myArr[foo] != null){
+                htmly += '<tr><td>'+myArr[foo].dates+'</td><td>'+myArr[foo].times+'</td><td>'+myArr[foo].location+
+                    '</td><td>'+myArr[foo].description+'</td></tr>';
+                foo += 1;
+            }
+            document.getElementById("poyta").innerHTML = htmly;
+        }
+    }
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();
 </script>
 
 

@@ -113,6 +113,35 @@ app.get("/note", function (req, res) {
     //res.end(JSON.stringify(response));
 });
 
+
+    app.get("/getnotes", function (req, res) {
+        var con = mysql.createConnection({
+            host: "localhost",
+            user: "root",
+            password: "c121112m",
+            database: "voyage"
+        });
+        con.connect(function (err) {
+            if (err) throw err;
+            console.log("Connected!");
+            var sql = 'SELECT * FROM notes;';
+
+            console.log(sql);
+            con.query(sql, function (err, result) {
+                if (err) throw err;
+
+                else {
+
+                    res.send(result);
+
+                }
+            });
+
+
+        });
+
+    });
+
 app.get("/index.htm", function (req, res) {
 	res.sendFile( __dirname +  "\\" + "index.html" );
 });
