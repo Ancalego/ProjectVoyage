@@ -136,6 +136,7 @@
                 </table>
             <div><p>You can add new notes here!</p></div>
             <button onclick="document.getElementById('id01').style.display='block'">Add Note</button>
+            <button onclick=location.replace('http://localhost:8081/')>Log out</button>
             <div style = "font-size:12px; color:#cc0000; margin-top:10px"><?php echo $error; ?></div>
 
         </div>
@@ -149,7 +150,7 @@
 <div id="id01" class="register">
 
     <!-- Modal Content -->
-    <form class="register-content animate" action="http://localhost:8081/note" id="ok" method="get">
+    <form class="register-content animate" action="http://localhost:8081/note" id="ok" method="post">
 
         <div class="container">
             <label><b>Date</b></label>
@@ -189,10 +190,10 @@
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             var myArr = JSON.parse(xmlhttp.responseText);
             var foo = 0;
-            var htmly = '<tr>' + '<th>Date</th>' + '<th>Time</th>' + '<th>Location</th>' + '<th>Description</th>' + '</tr>'
+            var htmly = '<tr>' + '<th>Date</th>' + '<th>Time</th>' + '<th>Location</th>' + '<th>Description</th>' + '</tr></a>'
             while (myArr[foo] != null){
                 htmly += '<tr><td>'+myArr[foo].dates+'</td><td>'+myArr[foo].times+'</td><td>'+myArr[foo].location+
-                    '</td><td>'+myArr[foo].description+'</td></tr>';
+                    '</td><td>'+myArr[foo].description+'</td><td><a onclick="remEvent(this)" href="#" id = "'+myArr[foo].id+'">x</a></td></tr>';
                 foo += 1;
             }
             document.getElementById("poyta").innerHTML = htmly;
@@ -200,6 +201,28 @@
     }
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
+
+    function remEvent(event){
+        var deletion = event.id;
+        var xmlhttp2 = new XMLHttpRequest();
+        var url = 'http://localhost:8081/remove?del='+deletion;
+        xmlhttp2.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                var myArr = JSON.parse(xmlhttp.responseText);
+                var foo = 0;
+                var htmly = '<tr>' + '<th>Date</th>' + '<th>Time</th>' + '<th>Location</th>' + '<th>Description</th>' + '</tr></a>'
+                while (myArr[foo] != null){
+                    htmly += '<tr><td>'+myArr[foo].dates+'</td><td>'+myArr[foo].times+'</td><td>'+myArr[foo].location+
+                        '</td><td>'+myArr[foo].description+'</td><td><a onclick="remEvent(this)" href="#" id = "'+myArr[foo].id+'">x</a></td></tr>';
+                    foo += 1;
+                }
+                document.getElementById("poyta").innerHTML = htmly;
+            }
+        }
+        xmlhttp.open("GET", url, true);
+        xmlhttp.send();
+    }
+
 </script>
 
 

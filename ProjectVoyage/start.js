@@ -2,6 +2,10 @@
 var express = require("express");
 var app = express();
 var mysql = require('mysql');
+var bodyParser = require("body-parser");
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 let temp = "";
 
@@ -11,7 +15,7 @@ app.get("/", function (req, res) {
 });
 
 // Login getti
-app.get("/ok", function (req, res) {
+app.post("/ok", function (req, res) {
     var con = mysql.createConnection({
         host: "localhost",
         user: "root",
@@ -21,13 +25,13 @@ app.get("/ok", function (req, res) {
     con.connect(function(err){
         if (err) throw err;
         console.log("Connected!");
-        var sql = 'SELECT * FROM users WHERE username = "' + req.query.username + '";';
+        var sql = 'SELECT * FROM users WHERE username = "' + req.body.username + '";';
 
         console.log(sql);
         con.query(sql, function (err, result){
             if (err) throw err;
 
-            else if (req.query.password == result[0].password){
+            else if (req.body.password == result[0].password){
                 temp = result[0].id;
                 console.log(temp);
                 res.sendFile( __dirname + "\\" + "main.html");
@@ -42,8 +46,8 @@ app.get("/ok", function (req, res) {
     });
 
     response = {
-        username:req.query.username,
-        password:req.query.password
+        username:req.body.username,
+        password:req.body.password
     }
     console.log(response);
     //res.end(JSON.stringify(response));
@@ -83,7 +87,7 @@ app.get("/reg", function (req, res) {
 });
 
 // Add note getti
-app.get("/note", function (req, res) {
+app.post("/note", function (req, res) {
     var con = mysql.createConnection({
         host: "localhost",
         user: "root",
@@ -93,7 +97,7 @@ app.get("/note", function (req, res) {
     con.connect(function(err){
         if (err) throw err;
         console.log("Connected!");
-        var sql = 'INSERT INTO notes(description,location,times,dates,user_id) VALUES("'+req.query.description+'","'+req.query.location+'","'+req.query.time+'","'+req.query.date+'","'+temp+'");';
+        var sql = 'INSERT INTO notes(description,location,times,dates,user_id) VALUES("'+req.body.description+'","'+req.body.location+'","'+req.body.time+'","'+req.body.date+'","'+temp+'");';
 
         console.log(sql);
         con.query(sql, function (err, result){
@@ -113,7 +117,7 @@ app.get("/note", function (req, res) {
     //res.end(JSON.stringify(response));
 });
 
-
+//JSON Formaatissa http://localhost:8081/getnotes
 app.get("/getnotes2", function (req, res) {
     var con = mysql.createConnection({
         host: "localhost",
@@ -136,7 +140,7 @@ app.get("/getnotes2", function (req, res) {
     });
 });
 
-// rajapinta location filter esim. http://localhost:8081/getnotes?location=HKI
+// rajapinta location filter esim. http://localhost:8081/getnotes?location=Helsinki
 app.get("/getnotes", function (req, res) {
     if ((req.query.location == null)||(req.query.location == "")){
         var con = mysql.createConnection({
@@ -179,6 +183,64 @@ app.get("/getnotes", function (req, res) {
                     res.send(result);
                 }
             });
+        });
+    }
+
+});
+
+// poistaa muistion
+app.get("/remove", function (req, res) {
+    if ((req.query.del == null)||(req.query.del == "")){
+        var con = mysql.createConnection({
+            host: "localhost",
+            user: "root",
+            password: "0000",
+            database: "voyage"
+        });
+        con.connect(function (err) {
+            if (err) throw err;
+            console.log("Connected!");
+            var sql = 'SELECT * FROM notes WHERE user_id = "'+temp+'";';
+
+            console.log(sql);
+            con.query(sql, function (err, result) {
+                if (err) throw err;
+
+                else {
+
+                    res.send(result);
+
+                }
+            });
+
+
+        });
+    }
+    else{
+        var con = mysql.createConnection({
+            host: "localhost",
+            user: "root",
+            password: "c121112m",
+            database: "voyage"
+        });
+        con.connect(function (err) {
+            if (err) throw err;
+            console.log("Connected!");
+            var sql = 'DELETE FROM notes WHERE id = "'+req.query.del+'";';
+            var sql2 = 'SELECT * FROM notes WHERE user_id = "'+temp+'";';
+            con.query(sql);
+
+
+            console.log(sql);
+            con.query(sql2, function (err, result) {
+                if (err) throw err;
+
+                else {
+                    res.send(result);
+
+                }
+            });
+
         });
     }
 
