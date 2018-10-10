@@ -114,7 +114,31 @@ app.get("/note", function (req, res) {
 });
 
 
-    app.get("/getnotes2", function (req, res) {
+app.get("/getnotes2", function (req, res) {
+    var con = mysql.createConnection({
+        host: "localhost",
+        user: "root",
+        password: "c121112m",
+        database: "voyage"
+    });
+    con.connect(function (err) {
+        if (err) throw err;
+        console.log("Connected!");
+        var sql = 'SELECT * FROM notes WHERE user_id = "'+temp+'";';
+
+        console.log(sql);
+        con.query(sql, function (err, result) {
+            if (err) throw err;
+            else {
+                res.send(result);
+            }
+        });
+    });
+});
+
+// rajapinta location filter esim. http://localhost:8081/getnotes?location=HKI
+app.get("/getnotes", function (req, res) {
+    if ((req.query.location == null)||(req.query.location == "")){
         var con = mysql.createConnection({
             host: "localhost",
             user: "root",
@@ -124,23 +148,41 @@ app.get("/note", function (req, res) {
         con.connect(function (err) {
             if (err) throw err;
             console.log("Connected!");
-            var sql = 'SELECT * FROM notes WHERE user_id = "'+temp+'";';
+            var sql = 'SELECT * FROM notes;';
 
             console.log(sql);
             con.query(sql, function (err, result) {
                 if (err) throw err;
 
                 else {
-
                     res.send(result);
-
                 }
             });
-
-
         });
+    }
+    else{
+        var con = mysql.createConnection({
+            host: "localhost",
+            user: "root",
+            password: "c121112m",
+            database: "voyage"
+        });
+        con.connect(function (err) {
+            if (err) throw err;
+            console.log("Connected!");
+            var sql = 'SELECT * FROM notes WHERE location = "'+req.query.location+'";';
 
-    });
+            console.log(sql);
+            con.query(sql, function (err, result) {
+                if (err) throw err;
+                else {
+                    res.send(result);
+                }
+            });
+        });
+    }
+
+});
 
 app.get("/index.htm", function (req, res) {
 	res.sendFile( __dirname +  "\\" + "index.html" );
