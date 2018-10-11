@@ -1,0 +1,16 @@
+﻿
+Rest api dokumentaatio
+GET /getnotes
+selects all notes from database
+
+GET /getnotes2
+selects all logged users notes
+
+GET /getnotes?location=Helsinki
+location filter to database query
+
+DELETE /remove
+removes notes from database
+
+POST /note
+add note Date,Time,Location,Description
