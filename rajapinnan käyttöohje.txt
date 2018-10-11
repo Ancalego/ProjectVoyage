@@ -1,0 +1,7 @@
+﻿Kirjautunut käyttäjä voi tallentaa muistiinpanoja sisältää päivämäärän, kellonajan, sijainnin ja kuvauksen.
+Pääsivulla näkee kaikki käyttäjän syöttämät muistiinpanot ja niitä voi halutessaan poistaa .
+
+Rajapinnassa voi palauttaa kaikki muistiinpanot tai filtteröidä sijainnin perusteella syöttämällä osoitekenttään haluttun sijainti
+
+esimerkiksi
+http://localhost:8081/getnotes?location=Helsinki
